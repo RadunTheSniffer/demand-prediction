@@ -1,5 +1,5 @@
 
-```markdown
+
 # Demand Forecasting for SME
 
 This project aims to build a regression model for demand forecasting in a small and medium-sized enterprise (SME) using self-procured data through web scraping with Puppeteer.
@@ -63,7 +63,7 @@ Demand forecasting is crucial for SMEs to manage inventory, optimize supply chai
 3. **Train the Model**: Use the training data to train the model.
 4. **Evaluate the Model**: Assess the model's performance using metrics like Mean Squared Error (MSE).
 
-### Example
+## Example
 ```python
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -101,4 +101,4 @@ This project provides a comprehensive guide to building a demand forecasting mod
 
 ```
 
-Feel free to modify this `README.md` to better fit your specific project needs! If you have any more questions or need further assistance, just let me know.
+
