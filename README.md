@@ -17,35 +17,28 @@ Demand forecasting is crucial for SMEs to manage inventory, optimize supply chai
 
 ## Data Procurement
 ### Tools
-- **Puppeteer**: A Node.js library to control headless Chrome or Chromium for web scraping.
+- **MainContentExtractor**: A Python module to extract data for LLMs
+
 
 ### Steps
 1. **Identify Data Sources**: Choose websites relevant to your industry for scraping data.
 2. **Scrape Data**: Use Puppeteer to extract data. Below is an example script:
 
-    ```javascript
-    const puppeteer = require('puppeteer');
+    ```python
+    import requests
+    from main_content_extractor import MainContentExtractor
 
-    (async () => {
-      const browser = await puppeteer.launch();
-      const page = await browser.newPage();
-      await page.goto('https://example.com');
+    # Get HTML using requests
+    url = "https://developer.mozilla.org/ja/docs/Web"
+    response = requests.get(url)
+    response.encoding = 'utf-8'
+    content = response.text
 
-      const data = await page.evaluate(() => {
-        let items = [];
-        document.querySelectorAll('.item-listing').forEach(item => {
-          items.push({
-            name: item.querySelector('.name').innerText,
-            price: item.querySelector('.price').innerText,
-            date: item.querySelector('.date').innerText,
-          });
-        });
-        return items;
-      });
+    # Get HTML with main content extracted from HTML
+    extracted_html = MainContentExtractor.extract(content)
 
-      console.log(data);
-      await browser.close();
-    })();
+    # Get HTML with main content extracted from Markdown
+    extracted_markdown = MainContentExtractor.extract(content, output_format="markdown")
     ```
 
 ## Data Preprocessing
