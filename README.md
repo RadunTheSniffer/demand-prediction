@@ -7,7 +7,7 @@ This project aims to build a regression model for demand forecasting in a small 
 ## Table of Contents
 - [Introduction](#introduction)
 - [Data Procurement](#data-procurement)
-- [Data Preprocessing](#data-preprocessing)
+- [Future Integration](#future-integration)
 - [Model Building](#model-building)
 - [Model Deployment](#model-deployment)
 - [Conclusion](#conclusion)
@@ -16,30 +16,13 @@ This project aims to build a regression model for demand forecasting in a small 
 Demand forecasting is crucial for SMEs to manage inventory, optimize supply chain operations, and improve customer satisfaction. This project demonstrates how to build a regression model to predict demand using data procured through web scraping.
 
 ## Data Procurement
-### Tools
-- **MainContentExtractor**: A Python module to extract data for LLMs
+### Source
+- **Data Source**: Data is sourced from Kaggle
 
 
-### Steps
+### Future Integration
 1. **Identify Data Sources**: Choose websites relevant to your industry for scraping data.
-2. **Scrape Data**: Use Puppeteer to extract data. Below is an example script:
-
-    ```python
-    import requests
-    from main_content_extractor import MainContentExtractor
-
-    # Get HTML using requests
-    url = "https://developer.mozilla.org/ja/docs/Web"
-    response = requests.get(url)
-    response.encoding = 'utf-8'
-    content = response.text
-
-    # Get HTML with main content extracted from HTML
-    extracted_html = MainContentExtractor.extract(content)
-
-    # Get HTML with main content extracted from Markdown
-    extracted_markdown = MainContentExtractor.extract(content, output_format="markdown")
-    ```
+2. **Scrape Data**: Use MainContentExtractor to extract data. Below is an example script:
 
 ## Data Preprocessing
 1. **Clean the Data**: Handle missing values, remove duplicates, and convert data types.
